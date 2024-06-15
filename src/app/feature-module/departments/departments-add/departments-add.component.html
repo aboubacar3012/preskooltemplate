@@ -1,0 +1,108 @@
+<div class="content container-fluid">
+				
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Department</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/departments/departments-list'">Department</a></li>
+          <li class="breadcrumb-item active">Add Department</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+    
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="addDepartmentsForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Department Details</span></h5>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Department ID <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addDepartmentsForm.get('departmentId')?.invalid && addDepartmentsForm.get('departmentId')?.touched"
+                  formControlName="departmentId">
+                  <div
+                  *ngIf="addDepartmentsForm.get('departmentId')?.invalid && addDepartmentsForm.get('departmentId')?.touched">
+                  <small
+                      *ngIf="addDepartmentsForm.get('departmentId')?.invalid && addDepartmentsForm.get('departmentId')?.touched"
+                      class="text-danger"> *Department ID is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Department Name <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addDepartmentsForm.get('departmentName')?.invalid && addDepartmentsForm.get('departmentName')?.touched"
+                  formControlName="departmentName">
+                  <div
+                  *ngIf="addDepartmentsForm.get('departmentName')?.invalid && addDepartmentsForm.get('departmentName')?.touched">
+                  <small
+                      *ngIf="addDepartmentsForm.get('departmentName')?.invalid && addDepartmentsForm.get('departmentName')?.touched"
+                      class="text-danger"> *Department name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Head of Department <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addDepartmentsForm.get('hod')?.invalid && addDepartmentsForm.get('hod')?.touched"
+                  formControlName="hod">
+                  <div
+                  *ngIf="addDepartmentsForm.get('hod')?.invalid && addDepartmentsForm.get('hod')?.touched">
+                  <small
+                      *ngIf="addDepartmentsForm.get('hod')?.invalid && addDepartmentsForm.get('hod')?.touched"
+                      class="text-danger"> *Head of department is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Department Start Date <span class="login-danger">*</span></label>
+                  <input class="form-control datetimepicker" 
+                  matInput [matDatepicker]="picker"
+                  [class.invalid]="addDepartmentsForm.get('startDate')?.invalid && addDepartmentsForm.get('startDate')?.touched"
+                  formControlName="startDate" placeholder="DD-MM-YYYY">
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <div
+                  *ngIf="addDepartmentsForm.get('startDate')?.invalid && addDepartmentsForm.get('startDate')?.touched">
+                  <small
+                      *ngIf="addDepartmentsForm.get('startDate')?.invalid && addDepartmentsForm.get('startDate')?.touched"
+                      class="text-danger"> *Department start date is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label  htmlFor="">No of Students <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control"  [class.invalid]="addDepartmentsForm.get('noOfStudents')?.invalid && addDepartmentsForm.get('noOfStudents')?.touched"
+                  formControlName="noOfStudents">
+                  <div
+                  *ngIf="addDepartmentsForm.get('noOfStudents')?.invalid && addDepartmentsForm.get('noOfStudents')?.touched">
+                  <small
+                      *ngIf="addDepartmentsForm.get('noOfStudents')?.invalid && addDepartmentsForm.get('noOfStudents')?.touched"
+                      class="text-danger"> *No of Students is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="student-submit">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>					
+  </div>					
+</div>

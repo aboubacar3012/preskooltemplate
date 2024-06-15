@@ -1,0 +1,115 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Transport</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink] = "routes.transport">Transport</a></li>
+          <li class="breadcrumb-item active">Add Transport</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addTransport()" [formGroup]="addTransportForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Transport Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="routeName">Route Name<span class="mandatory">*</span></label>
+                  <input id="routeName" type="text" class="form-control" [class.invalid]="addTransportForm.get('routeName')?.invalid && addTransportForm.get('routeName')?.touched"
+                  formControlName="routeName">
+                  <div
+                  *ngIf="addTransportForm.get('routeName')?.invalid && addTransportForm.get('routeName')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('routeName')?.invalid && addTransportForm.get('routeName')?.touched"
+                      class="text-danger"> *RouteName is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="vehicleNumber">Vehicle Number<span class="mandatory">*</span></label>
+                  <input id="vehicleNumber" type="text" class="form-control" [class.invalid]="addTransportForm.get('vehicleNumber')?.invalid && addTransportForm.get('vehicleNumber')?.touched"
+                  formControlName="vehicleNumber">
+                  <div
+                  *ngIf="addTransportForm.get('vehicleNumber')?.invalid && addTransportForm.get('vehicleNumber')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('vehicleNumber')?.invalid && addTransportForm.get('vehicleNumber')?.touched"
+                      class="text-danger"> *vehicle Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="driverName">Driver Name<span class="mandatory">*</span></label>
+                  <input id="driverName" type="text" class="form-control" [class.invalid]="addTransportForm.get('driverName')?.invalid && addTransportForm.get('driverName')?.touched"
+                  formControlName="driverName">
+                  <div
+                  *ngIf="addTransportForm.get('driverName')?.invalid && addTransportForm.get('driverName')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('driverName')?.invalid && addTransportForm.get('driverName')?.touched"
+                      class="text-danger"> *DriverName is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="licenseNumber">License Number<span class="mandatory">*</span></label>
+                  <input id="licenseNumber" type="text" class="form-control" [class.invalid]="addTransportForm.get('licenseNumber')?.invalid && addTransportForm.get('licenseNumber')?.touched"
+                  formControlName="licenseNumber">
+                  <div
+                  *ngIf="addTransportForm.get('licenseNumber')?.invalid && addTransportForm.get('licenseNumber')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('licenseNumber')?.invalid && addTransportForm.get('licenseNumber')?.touched"
+                      class="text-danger"> *License Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="contactNumber">Contact Number<span class="mandatory">*</span></label>
+                  <input id="contactNumber" type="text" class="form-control" [class.invalid]="addTransportForm.get('contactNumber')?.invalid && addTransportForm.get('contactNumber')?.touched"
+                  formControlName="contactNumber">
+                  <div
+                  *ngIf="addTransportForm.get('contactNumber')?.invalid && addTransportForm.get('contactNumber')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('contactNumber')?.invalid && addTransportForm.get('contactNumber')?.touched"
+                      class="text-danger"> *Contact Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="driverAddress">Driver Address<span class="mandatory">*</span></label>
+                  <input id="driverAddress" type="text" class="form-control" [class.invalid]="addTransportForm.get('driverAddress')?.invalid && addTransportForm.get('driverAddress')?.touched"
+                  formControlName="driverAddress">
+                  <div
+                  *ngIf="addTransportForm.get('driverAddress')?.invalid && addTransportForm.get('driverAddress')?.touched">
+                  <small
+                      *ngIf="addTransportForm.get('driverAddress')?.invalid && addTransportForm.get('driverAddress')?.touched"
+                      class="text-danger"> *Driver Address is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

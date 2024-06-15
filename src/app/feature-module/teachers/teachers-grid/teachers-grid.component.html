@@ -1,0 +1,70 @@
+<div class="content container-fluid">
+				
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-sub-header">
+                    <h3 class="page-title">Students</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/teachers/teachers-list'">Student</a></li>
+                        <li class="breadcrumb-item active">All Students</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <div class="col-sm-12">
+        
+            <div class="card card-table comman-shadow">
+                <div class="card-body pb-0">
+                
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="page-title">Students</h3>
+                            </div>
+                            <div class="col-auto text-end float-end ms-auto download-grp">
+                                <a [routerLink]="'/teachers/teachers-list'" class="btn btn-outline-gray me-2"><i class="feather icon-list"></i></a>
+                                <a [routerLink]="'/teachers/teachers-grid'" class="btn btn-outline-gray me-2 active"><i class="feather icon-grid "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Page Header -->
+                    
+                    <div class="student-pro-list">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 d-flex" *ngFor ="let teachgrid of teachgrids" let i = index>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="student-box flex-fill">
+                                            <div class="student-img">
+                                                <a [routerLink]="'/teachers/teachers-details'">
+                                                    <img class="img-fluid" alt="Students Info" [src]="teachgrid.images">
+                                                </a>
+                                            </div>
+                                            <div class="student-content pb-0">												
+                                                <h5><a [routerLink]="'/teachers/teachers-details'">{{teachgrid.username}}</a></h5>
+                                                <h6>{{teachgrid.details}}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>							
+        </div>					
+    </div>					
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>COPYRIGHT © 2023 DREAMSTECHNOLOGIES.</p>					
+  </footer>
+  <!-- /Footer -->

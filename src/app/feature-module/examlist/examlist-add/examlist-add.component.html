@@ -1,0 +1,139 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Exam</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink] = "routes.examlist">Exam</a></li>
+          <li class="breadcrumb-item active">Add Exam</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addExam()" [formGroup]="addExamForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Exam Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Exam Name<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExamForm.get('examName')?.invalid && addExamForm.get('examName')?.touched"
+                  formControlName="examName">
+                  <div
+                  *ngIf="addExamForm.get('examName')?.invalid && addExamForm.get('examName')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('examName')?.invalid && addExamForm.get('examName')?.touched"
+                      class="text-danger"> *Exam name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Class<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addExamForm.get('class')?.invalid && addExamForm.get('class')?.touched"
+                  formControlName="class">
+                    <option value = "">Select Class</option>
+                    <option value = "LKG">LKG</option>
+                    <option value = "UKG">UKG</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                    <option value = "4">4</option>
+                    <option value = "5">5</option>
+                    <option value = "6">6</option>
+                    <option value = "7">7</option>
+                    <option value = "8">8</option>
+                    <option value = "9">9</option>
+                    <option value = "10">10</option>
+                    <option value = "11">11</option>
+                    <option value = "12">12</option>
+                  </select>
+                  <div
+                  *ngIf="addExamForm.get('class')?.invalid && addExamForm.get('class')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('class')?.invalid && addExamForm.get('class')?.touched"
+                      class="text-danger"> *Class is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Subject<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExamForm.get('subject')?.invalid && addExamForm.get('subject')?.touched"
+                  formControlName="subject">
+                  <div
+                  *ngIf="addExamForm.get('subject')?.invalid && addExamForm.get('subject')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('subject')?.invalid && addExamForm.get('subject')?.touched"
+                      class="text-danger"> *Subject is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExamForm.get('fees')?.invalid && addExamForm.get('fees')?.touched"
+                  formControlName="fees">
+                  <div
+                  *ngIf="addExamForm.get('fees')?.invalid && addExamForm.get('fees')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('fees')?.invalid && addExamForm.get('fees')?.touched"
+                      class="text-danger"> *Fees is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Start Time<span class="mandatory">*</span></label>
+                  <input type="time" class="form-control" [class.invalid]="addExamForm.get('startTime')?.invalid && addExamForm.get('startTime')?.touched"
+                  formControlName="startTime">
+                  <div
+                  *ngIf="addExamForm.get('startTime')?.invalid && addExamForm.get('startTime')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('startTime')?.invalid && addExamForm.get('startTime')?.touched"
+                      class="text-danger"> *Start time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">End Time<span class="mandatory">*</span></label>
+                  <input type="time" class="form-control" [class.invalid]="addExamForm.get('endTime')?.invalid && addExamForm.get('endTime')?.touched"
+                  formControlName="endTime">
+                  <div
+                  *ngIf="addExamForm.get('endTime')?.invalid && addExamForm.get('endTime')?.touched">
+                  <small
+                      *ngIf="addExamForm.get('endTime')?.invalid && addExamForm.get('endTime')?.touched"
+                      class="text-danger"> *End time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label for="event-date">Event Date</label>
+                  <input type="text" class="form-control" matInput [matDatepicker]="picker">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

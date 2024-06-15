@@ -1,0 +1,285 @@
+.table {
+	color: $color_1;
+	max-width: 100%;
+	margin-bottom: 0;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	&:not(:first-child) {
+		border-top: transparent;
+
+	}
+	thead {
+		th {
+			vertical-align: bottom;
+			border-bottom: 1px solid #dee2e6;
+		}
+		tr {
+			th {
+				font-weight: 600;
+			}
+		}
+	}
+	>tbody {
+		>tr {
+			>th {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+		}
+	}
+	tbody {
+		tr {
+			border-bottom: 1px solid #dee2e6;
+			&:last-child {
+				border-color: $border-color_3;
+			}
+		}
+	}
+	.thead-light {
+		th {
+			color: $color_6;
+			background-color: $background-color_4;
+			border-color: $border-color_5;
+		}
+	}
+	.student-thread {
+		th {
+			color: $color_7;
+			background-color: $background-color_4;
+			border-color: $border-color_5;
+		}
+	}
+	.bg-success-dark {
+		background: #008F64;
+	}
+	.bg-danger-dark {
+		background: #FF0000;
+	}
+}
+.table>:not(caption)>*>* {
+    box-shadow: unset;
+    padding: 0.75rem;
+}
+.table-responsive {
+	white-space: nowrap;
+}
+.table-striped {
+	>tbody {
+		>tr {
+			&:nth-of-type(2n+1) {
+				background-color: $background-color_4;
+			}
+		}
+	}
+	thead {
+		tr {
+			border-color: $border-color_3;
+		}
+	}
+	tbody {
+		tr {
+			border-color: $border-color_3;
+			&:nth-of-type(even) {
+				background-color: $background-color_6;
+			}
+			&:nth-of-type(odd) {
+				background-color: $background-color_7;
+			}
+		}
+	}
+}
+.table.no-border {
+	>tbody {
+		>tr {
+			>td {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+		}
+	}
+	>tfoot {
+		>tr {
+			>td {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+			>th {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+		}
+	}
+	>thead {
+		>tr {
+			>td {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+			>th {
+				border-top: 0;
+				padding: 10px 8px;
+			}
+		}
+	}
+}
+.table-nowrap {
+	td {
+		white-space: nowrap;
+	}
+	th {
+		white-space: nowrap;
+	}
+}
+.table.dataTable {
+	border-collapse: collapse !important;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+table.table {
+	td {
+		h2 {
+			display: inline-block;
+			font-size: inherit;
+			font-weight: 400;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			a {
+				color: $color_1;
+				&:hover {
+					color: $color_3;
+				}
+			}
+			span {
+				color: $color_4;
+				display: block;
+				font-size: 12px;
+				margin-top: 3px;
+			}
+		}
+		h2.table-avatar {
+			align-items: center;
+			display: inline-flex;
+			font-size: inherit;
+			font-weight: 400;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			white-space: nowrap;
+		}
+	}
+}
+.table.table-center {
+	td {
+		vertical-align: middle;
+	}
+	th {
+		vertical-align: middle;
+	}
+}
+.table-hover {
+	tbody {
+		tr {
+			&:hover {
+				background-color: $background-color_5;
+				td {
+					color: $color_5;
+				}
+			}
+		}
+	}
+}
+.table-bordered {
+	border: 1px solid rgba(0, 0, 0, 0.05) !important;
+	th {
+		border-color: $border-color_4;
+	}
+	td {
+		border-color: $border-color_4;
+	}
+}
+.card-table {
+	.card-body {
+		.table {
+			>thead {
+				>tr {
+					>th {
+						border-top: 0;
+					}
+				}
+			}
+			tr {
+				td {
+					&:first-child {
+						padding-left: 1.5rem;
+					}
+					&:last-child {
+						padding-right: 1.5rem;
+					}
+				}
+				th {
+					&:first-child {
+						padding-left: 1.5rem;
+					}
+					&:last-child {
+						padding-right: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+	.table {
+		td {
+			border-top: 1px solid #e2e5e8;
+			padding: 1rem 0.75rem;
+			white-space: nowrap;
+		}
+		th {
+			border-top: 1px solid #e2e5e8;
+			padding: 1rem 0.75rem;
+			white-space: nowrap;
+		}
+	}
+}
+.table_header {
+	display: flex;
+	justify-content: space-between;
+	.dataTables_length {
+	  label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	  }
+	  select {
+		width: auto;
+		display: inline-block;
+		margin: 0px 3px;
+	  }
+	}
+	.dataTables_filter {
+	  label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	  }
+	  input {
+		width: auto;
+		display: inline-block;
+		margin: 0px 3px;
+	  }
+	}
+  }
+  .table_footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4rem 1.5rem 1.5rem;
+	.pagination_section {
+	  display: flex;
+	  justify-content: flex-end;
+	}
+  }
+  .table-scroll {
+	max-height: calc(100vh - 350px);
+	overflow-x: auto;
+  }

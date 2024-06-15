@@ -1,0 +1,187 @@
+<div class="content container-fluid">
+				
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Edit Teachers</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/layout/teachers/teachers-list'">Teachers</a></li>
+          <li class="breadcrumb-item active">Edit Teachers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+    
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="editTeachers()" [formGroup]="editTeachersForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Basic Details</span></h5>
+              </div>
+              <div class="col-12 col-sm-4">  
+                <div class="form-group local-forms">
+                  <label htmlFor="teacherid">Teacher ID <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Teacher ID" class="form-control" [class.invalid]="editTeachersForm.get('teacherId')?.invalid && editTeachersForm.get('teacherId')?.touched"
+                  formControlName="teacherId">
+                  <div
+                  *ngIf="editTeachersForm.get('teacherId')?.invalid && editTeachersForm.get('teacherId')?.touched">
+                  <small
+                      *ngIf="editTeachersForm.get('teacherId')?.invalid && editTeachersForm.get('teacherId')?.touched"
+                      class="text-danger"> *Teacher ID is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="username">Name <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editTeachersForm.get('teacherName')?.invalid && editTeachersForm.get('teacherName')?.touched"
+                  formControlName="teacherName" placeholder="Enter Name" value="Johns paul">
+                  <div
+                    *ngIf="editTeachersForm.get('teacherName')?.invalid && editTeachersForm.get('teacherName')?.touched">
+                    <small
+                        *ngIf="editTeachersForm.get('teacherName')?.invalid && editTeachersForm.get('teacherName')?.touched"
+                        class="text-danger"> *Teacher name is required</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="gender">Gender <span class="login-danger">*</span></label>
+                  <select class="form-control select form-select">
+                    <option>Enter Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="dob">Date Of Birth  <span class="login-danger">*</span></label>
+                  <!-- <input class="form-control datetimepicker" type="date"  placeholder="DD-MM-YYYY" > -->
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="mobile">Mobile <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter Phone"[class.invalid]="editTeachersForm.get('mobile')?.invalid && editTeachersForm.get('mobile')?.touched"
+                  formControlName="mobile">
+                  <div
+                  *ngIf="editTeachersForm.get('mobile')?.invalid && editTeachersForm.get('mobile')?.touched">
+                  <small
+                      *ngIf="editTeachersForm.get('mobile')?.invalid && editTeachersForm.get('mobile')?.touched"
+                      class="text-danger"> *Mobile number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="join-date">Joining Date <span class="login-danger">*</span></label>
+                  <!-- <input class="form-control datetimepicker" type="date"  placeholder="DD-MM-YYYY" > -->
+                  <input class="form-control" matInput [matDatepicker]="picker2" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4 local-forms">
+                <div class="form-group">
+                  <label htmlFor="qualification">Qualification <span class="login-danger">*</span></label>
+                  <input class="form-control" type="text" placeholder="Enter Joining Date">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="Experience">Experience <span class="login-danger">*</span></label>
+                  <input class="form-control" type="text" placeholder="Enter Experience">
+                </div>
+              </div>
+              <div class="col-12">
+                <h5 class="form-title"><span>Login Details</span></h5>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="name">Username <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter Username">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="email-id">Email ID <span class="login-danger">*</span></label>
+                  <input type="email" class="form-control" placeholder="Enter Mail Id" [class.invalid]="editTeachersForm.get('address')?.invalid && editTeachersForm.get('address')?.touched"
+                  formControlName="address">
+                  <div
+                  *ngIf="editTeachersForm.get('address')?.invalid && editTeachersForm.get('address')?.touched">
+                  <small
+                      *ngIf="editTeachersForm.get('address')?.invalid && editTeachersForm.get('address')?.touched"
+                      class="text-danger"> *Address is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="Password">Password <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter Password">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="repeat-password">Repeat Password <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Repeat Password">
+                </div>
+              </div>
+              <div class="col-12">
+                <h5 class="form-title"><span>Address</span></h5>
+              </div>
+              <div class="col-12">
+                <div class="form-group local-forms">
+                <label htmlFor="address">Address <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter address">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="city">City <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter City">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="state">State <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter State">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="zip">Zip Code <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter Zip">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label htmlFor="country">Country <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter Country">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="student-submit">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>					
+  </div>					
+</div>
+

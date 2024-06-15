@@ -1,0 +1,129 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Time Table</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/timetable/timetable-main'">Time Table</a></li>
+          <li class="breadcrumb-item active">Add Time Table</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addTimetable()" [formGroup]="addTimetableForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Time Table</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="teacherId">Teacher Id<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addTimetableForm.get('teacherId')?.invalid && addTimetableForm.get('teacherId')?.touched"
+                  formControlName="teacherId">
+                  <div
+                  *ngIf="addTimetableForm.get('teacherId')?.invalid && addTimetableForm.get('teacherId')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('teacherId')?.invalid && addTimetableForm.get('teacherId')?.touched"
+                      class="text-danger"> *Teacher Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="name">Name<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addTimetableForm.get('name')?.invalid && addTimetableForm.get('name')?.touched"
+                  formControlName="name">
+                  <div
+                  *ngIf="addTimetableForm.get('name')?.invalid && addTimetableForm.get('name')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('name')?.invalid && addTimetableForm.get('name')?.touched"
+                      class="text-danger"> *Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="class">Class<span class="mandatory">*</span></label>
+                    <input type="text" class="form-control"[class.invalid]="addTimetableForm.get('class')?.invalid && addTimetableForm.get('class')?.touched"
+                    formControlName="class">
+                  <div
+                  *ngIf="addTimetableForm.get('class')?.invalid && addTimetableForm.get('class')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('class')?.invalid && addTimetableForm.get('class')?.touched"
+                      class="text-danger"> *Class is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="section">Section</label>
+                  <input type="text" class="form-control" value="B">
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="subject">Subject<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addTimetableForm.get('subject')?.invalid && addTimetableForm.get('subject')?.touched"
+                  formControlName="subject">
+                  <div
+                  *ngIf="addTimetableForm.get('subject')?.invalid && addTimetableForm.get('subject')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('subject')?.invalid && addTimetableForm.get('subject')?.touched"
+                      class="text-danger"> *Subject is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label htmlFor="date">Date<span class="mandatory">*</span></label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="startTime">Start Time<span class="mandatory">*</span></label>
+                  <input type="time" class="form-control" [class.invalid]="addTimetableForm.get('startTime')?.invalid && addTimetableForm.get('startTime')?.touched"
+                  formControlName="startTime">
+                  <div
+                  *ngIf="addTimetableForm.get('startTime')?.invalid && addTimetableForm.get('startTime')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('startTime')?.invalid && addTimetableForm.get('startTime')?.touched"
+                      class="text-danger"> *Start time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="endTime" >End Time<span class="mandatory">*</span></label>
+                  <input type="time" class="form-control" [class.invalid]="addTimetableForm.get('endTime')?.invalid && addTimetableForm.get('endTime')?.touched"
+                  formControlName="endTime">
+                  <div
+                  *ngIf="addTimetableForm.get('endTime')?.invalid && addTimetableForm.get('endTime')?.touched">
+                  <small
+                      *ngIf="addTimetableForm.get('endTime')?.invalid && addTimetableForm.get('endTime')?.touched"
+                      class="text-danger"> *End time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

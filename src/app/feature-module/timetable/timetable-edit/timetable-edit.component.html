@@ -1,0 +1,129 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Edit Time Table</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/timetable/timetable-main'">Time Table</a></li>
+          <li class="breadcrumb-item active">Edit Time Table</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="editTimetable()" [formGroup]="editTimetableForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Time Table</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="teacherId">Teacher Id<span class="mandatory">*</span></label>
+                  <input  id="teacherId" type="text" class="form-control" [class.invalid]="editTimetableForm.get('teacherId')?.invalid && editTimetableForm.get('teacherId')?.touched"
+                  formControlName="teacherId">
+                  <div
+                  *ngIf="editTimetableForm.get('teacherId')?.invalid && editTimetableForm.get('teacherId')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('teacherId')?.invalid && editTimetableForm.get('teacherId')?.touched"
+                      class="text-danger"> *Teacher Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="name">Name<span class="mandatory">*</span></label>
+                  <input id="name" type="text" class="form-control" [class.invalid]="editTimetableForm.get('name')?.invalid && editTimetableForm.get('name')?.touched"
+                  formControlName="name">
+                  <div
+                  *ngIf="editTimetableForm.get('name')?.invalid && editTimetableForm.get('name')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('name')?.invalid && editTimetableForm.get('name')?.touched"
+                      class="text-danger"> *Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="classtype"  fields>Class<span class="mandatory">*</span></label>
+                    <input id="classtype" type="text" class="form-control"[class.invalid]="editTimetableForm.get('class')?.invalid && editTimetableForm.get('class')?.touched"
+                    formControlName="class">
+                  <div
+                  *ngIf="editTimetableForm.get('class')?.invalid && editTimetableForm.get('class')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('class')?.invalid && editTimetableForm.get('class')?.touched"
+                      class="text-danger"> *Class is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="Section">Section</label>
+                  <input  type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="subject">Subject<span class="mandatory">*</span></label>
+                  <input id="subject" type="text" class="form-control" [class.invalid]="editTimetableForm.get('subject')?.invalid && editTimetableForm.get('subject')?.touched"
+                  formControlName="subject">
+                  <div
+                  *ngIf="editTimetableForm.get('subject')?.invalid && editTimetableForm.get('subject')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('subject')?.invalid && editTimetableForm.get('subject')?.touched"
+                      class="text-danger"> *Subject is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="date">Date<span class="mandatory">*</span></label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="time">Start Time<span class="mandatory">*</span></label>
+                  <input id="time" type="time" class="form-control" [class.invalid]="editTimetableForm.get('startTime')?.invalid && editTimetableForm.get('startTime')?.touched"
+                  formControlName="startTime">
+                  <div
+                  *ngIf="editTimetableForm.get('startTime')?.invalid && editTimetableForm.get('startTime')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('startTime')?.invalid && editTimetableForm.get('startTime')?.touched"
+                      class="text-danger"> *Start time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="endTime">End Time<span class="mandatory">*</span></label>
+                  <input id="endTime" type="time" class="form-control" [class.invalid]="editTimetableForm.get('endTime')?.invalid && editTimetableForm.get('endTime')?.touched"
+                  formControlName="endTime">
+                  <div
+                  *ngIf="editTimetableForm.get('endTime')?.invalid && editTimetableForm.get('endTime')?.touched">
+                  <small
+                      *ngIf="editTimetableForm.get('endTime')?.invalid && editTimetableForm.get('endTime')?.touched"
+                      class="text-danger"> *End time is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

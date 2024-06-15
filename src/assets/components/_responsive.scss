@@ -1,0 +1,1266 @@
+@media only screen and (min-width: 1199.5px) and (max-width: 1620px) {
+	.sm-box {
+		p {
+			color: $color_8;
+			font-size: 12px;
+		}
+	}
+	.fa-twitter {
+		bottom: -6px !important;
+	}
+	.fa-instagram {
+		bottom: -4px !important;
+	}
+	.fa-linkedin-in {
+		bottom: -9px !important;
+	}
+}
+@media (min-width:768px) {
+	.avatar-xxl {
+		width: 8rem;
+		height: 8rem;
+		.border {
+			border-width: 4px !important;
+		}
+		.rounded {
+			border-radius: 12px !important;
+		}
+		.avatar-title {
+			font-size: 42px;
+		}
+	}
+	.avatar-xxl.avatar-away {
+		&:before {
+			border-width: 4px;
+		}
+	}
+	.avatar-xxl.avatar-offline {
+		&:before {
+			border-width: 4px;
+		}
+	}
+	.avatar-xxl.avatar-online {
+		&:before {
+			border-width: 4px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	#toggle_btn {
+		align-items: center;
+		color: $color_8;
+		display: inline-flex;
+		float: left;
+		font-size: 18px;
+		height: 40px;
+		width: 40px;
+		background: #3D5EE1;
+		justify-content: center;
+		padding: 0 12px;
+		border-radius: 10px;
+		position: absolute;
+		left: -22px;
+		z-index: 99;
+		top: 10px;
+		box-shadow: 0px 0px 35px rgba(61, 47, 146, 0.1);
+	}
+	.mini-sidebar {
+		.menu-toggle {
+			#toggle_btn {
+				left: 5px;
+			}
+		}
+		.header-left {
+			.logo {
+				img {
+					height: auto;
+					max-height: 40px;
+					width: auto;
+				}
+			}
+			.logo.logo-small {
+				display: block !important;
+			}
+		}
+		.header {
+			.header-left {
+				.logo {
+					display: none;
+				}
+				padding: 0 5px;
+				width: 78px;
+			}
+		}
+		.sidebar {
+			width: 78px;
+			.sidebar-menu {
+				ul {
+					>li {
+						>a {
+							span {
+								display: none;
+								transition: all 0.2s ease-in-out;
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		.menu-title {
+			visibility: hidden;
+			white-space: nowrap;
+			a {
+				visibility: hidden;
+			}
+		}
+		.page-wrapper {
+			margin-left: 78px;
+		}
+	}
+	.menu-toggle {
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.mini-sidebar.expand-menu {
+		.sidebar {
+			width: 240px;
+			.sidebar-menu {
+				ul {
+					>li {
+						>a {
+							span {
+								display: inline;
+								opacity: 1;
+							}
+						}
+					}
+				}
+				>ul {
+					>li {
+						>a {
+							i {
+								width: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.menu-title {
+			visibility: visible;
+			a {
+				visibility: visible;
+			}
+		}
+	}
+	.modal-open.mini-sidebar {
+		.sidebar {
+			z-index: 1051;
+		}
+	}
+}
+@media (max-width: 1399px) {
+	.award-list-outs {
+		max-width: 300px;
+	}
+	.skip-group {
+		.btn-info {
+			min-width: 130px;
+			padding: 6px 15px;
+			font-size: 15px;
+		}
+	}
+	.views-lesson {
+		h4 {
+			font-size: 15px;
+		}
+	}
+	.login-wrapper {
+		.loginbox {
+			.login-right {
+				h1 {
+					font-size: 22px;
+				}
+				h2 {
+					font-size: 20px;
+				}
+				.forgotpass {
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.account-subtitle {
+		font-size: 14px;
+	}
+}
+@media (max-width: 1199.5px) {
+	.sm-box {
+		h6 {
+			font-size: 30px;
+			font-size: 20px;
+		}
+		p {
+			font-size: 22px;
+			font-size: 16px;
+		}
+		.fab {
+			font-size: 100px;
+		}
+	}
+	.dash-widget3 {
+		padding-right: 15px;
+	}
+	.dash-widget4 {
+		padding-left: 15px;
+	}
+	.app-listing {
+		display: inline-block;
+		li {
+			width: 49%;
+			display: inline-block;
+		}
+	}
+	.report-btn {
+		.btn {
+			width: 200px;
+		}
+	}
+	.social-boxs {
+		background: #fff;
+		width: 50px;
+		height: 46px;
+	}
+	.profile-user-img {
+		img {
+			border: 4px solid #fff;
+			width: 75px;
+		}
+	}
+	.names-profiles {
+		h4 {
+			font-size: 16px;
+		}
+		h5 {
+			font-size: 13px;
+		}
+	}
+	.follow-group {
+		padding: 0px 10px;
+	}
+	.students-follows {
+		h4 {
+			font-size: 18px;
+		}
+	}
+	.follow-btn-group {
+		margin: 10px 0px;
+		.btn-info {
+			min-width: 80px;
+			font-size: 14px;
+			padding: 5px 15px;
+		}
+	}
+	.profile-edit-icon {
+		width: 26px;
+		height: 26px;
+		i {
+			font-size: 12px;
+		}
+	}
+	.search-student-btn {
+		.btn-primary {
+			min-width: 95px;
+		}
+	}
+}
+@media (max-width: 991.98px) {
+	.header {
+		.header-left {
+			position: absolute;
+			width: 100%;
+			padding: 0px 50px;
+		}
+	}
+	.mobile_btn {
+		color: $color_10 !important;
+		cursor: pointer;
+		display: block;
+		font-size: 24px;
+		height: 60px;
+		left: 0;
+		line-height: 60px;
+		padding: 0 15px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		z-index: 10;
+	}
+	#toggle_btn {
+		display: none;
+	}
+	.top-nav-search {
+		display: none;
+	}
+	.login-wrapper {
+		.loginbox {
+			.login-left {
+				padding: 80px 50px;
+				width: 50%;
+			}
+			.login-right {
+				padding: 50px;
+				width: 50%;
+			}
+		}
+	}
+	.sidebar {
+		margin-left: -262px;
+		width: 225px;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		z-index: 1041;
+	}
+	.page-wrapper {
+		margin-left: 0;
+		padding-left: 0;
+		padding-right: 0;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+	}
+	.user-menu.nav {
+		>li {
+			>a {
+				color: $color_10;
+				.badge {
+					background-color: $background-color_9;
+					color: $color_8;
+				}
+				&:hover {
+					i {
+						color: $color_8;
+					}
+				}
+				&:focus {
+					i {
+						color: $color_8;
+					}
+				}
+			}
+		}
+	}
+	.sm-box {
+		h6 {
+			font-size: 25px;
+			font-size: 20px;
+		}
+		p {
+			font-size: 20px;
+			font-size: 16px;
+		}
+		.fab {
+			font-size: 100px;
+		}
+	}
+	footer {
+		text-align: center;
+	}
+	.dash-circle {
+		display: block;
+		.col-12 {
+			display: flex;
+		}
+	}
+	.dash-widget1 {
+		border-right: none;
+		ul {
+			li {
+				width: 40%;
+			}
+		}
+	}
+	.page-header {
+		.breadcrumb {
+			font-size: 15px;
+		}
+	}
+	.multipleSelection {
+		#checkBoxes {
+			width: 100%;
+		}
+	}
+	.SortBy {
+		#checkBox {
+			width: 100%;
+		}
+	}
+	.invoice-item-bg {
+		.invoice-info {
+			border-right: 0;
+			padding: 0;
+			margin-top: 0px;
+			border-right: 0;
+			padding: 0;
+			margin-top: 0px;
+		}
+		padding: 20px;
+		padding-bottom: 0;
+		padding: 20px;
+		padding-bottom: 0;
+	}
+	.invoice-payment-box {
+		.payment-details {
+			p {
+				font-size: 15px;
+			}
+		}
+	}
+	.invoice-head {
+		p {
+			font-size: 16px;
+			font-size: 16px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+	}
+	.invoice-terms {
+		h6 {
+			font-size: 18px;
+			font-size: 18px;
+		}
+	}
+	.invoice-total-footer {
+		h4 {
+			font-size: 15px;
+		}
+	}
+	.settings-form {
+		.social-icon {
+			width: 45px;
+			font-size: 20px;
+		}
+		.trash {
+			width: 40px;
+		}
+	}
+	.links-cont {
+		.form-control {
+			width: calc(100% - 93px);
+		}
+	}
+	.social-boxs {
+		background: #fff;
+		width: 50px;
+		height: 46px;
+	}
+	.activity-feed {
+		.feed-item {
+			.feed-text1 {
+				a {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	.lesson-activity {
+		padding-left: 15px;
+	}
+	.profile-user-img {
+		img {
+			border: 4px solid #fff;
+			width: 75px;
+		}
+	}
+	.names-profiles {
+		h4 {
+			font-size: 16px;
+		}
+		h5 {
+			font-size: 13px;
+		}
+	}
+	.follow-group {
+		padding: 0px 10px;
+	}
+	.students-follows {
+		h4 {
+			font-size: 18px;
+		}
+	}
+	.follow-btn-group {
+		margin: 10px 0px;
+		.btn-info {
+			min-width: 80px;
+			font-size: 14px;
+			padding: 5px 15px;
+		}
+	}
+	.profile-edit-icon {
+		width: 26px;
+		height: 26px;
+		i {
+			font-size: 12px;
+		}
+	}
+	.search-student-btn {
+		margin-bottom: 20px;
+	}
+
+}
+@media (max-width: 767.98px) {
+	body {
+		font-size: 0.9375rem;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+	.h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.75rem;
+	}
+	.h2 {
+		font-size: 1.75rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+	}
+	.h3 {
+		font-size: 1.5rem;
+	}
+	h4 {
+		font-size: 1.125rem;
+	}
+	.h4 {
+		font-size: 1.125rem;
+	}
+	h5 {
+		font-size: 1rem;
+	}
+	.h5 {
+		font-size: 1rem;
+	}
+	h6 {
+		font-size: 0.875rem;
+	}
+	.h6 {
+		font-size: 0.875rem;
+	}
+	.header {
+		.has-arrow {
+			.dropdown-toggle {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		.header-left {
+			padding: 0 15px;
+			.logo {
+				display: none;
+			}
+		}
+	}
+	.user-menu.nav {
+		>li {
+			>a {
+				>span {
+					&:not(.user-img) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.navbar-nav {
+		.open {
+			.dropdown-menu {
+				float: left;
+				position: absolute;
+			}
+		}
+	}
+	.navbar-nav.user-menu {
+		.open {
+			.dropdown-menu {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	.header-left {
+		.logo.logo-small {
+			display: inline-block;
+			left: 50%;
+			position: relative;
+			transform: translateX(-50%);
+			-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+		}
+	}
+	.login-wrapper {
+		.loginbox {
+			.login-left {
+				display: none;
+			}
+			max-width: 450px;
+			min-height: unset;
+			.login-right {
+				float: none;
+				padding: 1.875rem;
+				width: 100%;
+				h1 {
+					font-size: 22px;
+				}
+			}
+		}
+	}
+	.left-action {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	.right-action {
+		text-align: center;
+	}
+	.top-action-left {
+		.float-left {
+			float: none !important;
+		}
+		.btn-group {
+			margin-bottom: 15px;
+		}
+	}
+	.top-action-right {
+		text-align: center;
+		a.btn.btn-white {
+			margin-bottom: 15px;
+		}
+	}
+	.mail-sent-time {
+		float: left;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.profile-btn {
+		flex: 0 0 100%;
+		margin-top: 20px;
+	}
+	.edit-link {
+		font-size: 0.875rem;
+		margin-top: 0;
+	}
+	.product_price {
+		font-size: 1.5rem;
+	}
+	.error-box {
+		h1 {
+			font-size: 6em;
+		}
+		.btn {
+			font-size: 15px;
+			min-width: 150px;
+			padding: 8px 20px;
+		}
+	}
+	.user-menu {
+		padding-right: 0px;
+	}
+	.page-title {
+		font-size: 22px;
+	}
+	.db-info {
+		h3 {
+			font-size: 22px;
+		}
+	}
+	.app-listing {
+		li {
+			width: 100%;
+			width: 100%;
+		}
+	}
+	.invoices-tabs {
+		ul {
+			li {
+				margin-right: 0;
+				display: block;
+				margin-bottom: 14px;
+				margin-right: 0;
+				display: block;
+				margin-bottom: 14px;
+				a {
+					padding-bottom: 6px;
+					font-size: 15px;
+					padding-bottom: 6px;
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	.selectBox {
+		p {
+			font-size: 12px;
+		}
+	}
+	.report-btn {
+		.btn {
+			font-size: 14px;
+			padding: 10px 0;
+			font-size: 14px;
+			padding: 10px 0;
+		}
+	}
+	.inovices-widget-header {
+		.inovices-amount {
+			font-size: 20px;
+		}
+	}
+	.invoices-settings-btn {
+		.btn {
+			min-width: 140px;
+			padding: 8px 0;
+			font-size: 14px;
+			min-width: 140px;
+			padding: 8px 0;
+			font-size: 14px;
+		}
+		margin-top: 20px;
+		justify-content: start;
+		margin-top: 20px;
+		justify-content: start;
+	}
+	.invoices-grid-card {
+		.card-header {
+			padding: 15px;
+		}
+		.card-body {
+			padding: 15px;
+		}
+		.card-footer {
+			padding: 15px;
+		}
+	}
+	.card-middle {
+		padding: 15px;
+	}
+	.invoice-inner-head {
+		padding: 15px;
+		padding: 15px;
+	}
+	.invoice-inner-datepic {
+		padding-left: 15px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		padding-left: 15px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+	}
+	.invoice-details-title {
+		font-size: 16px;
+	}
+	.field-box {
+		.btn {
+			min-width: 160px;
+			padding: 8px 0;
+			font-size: 14px;
+			min-width: 160px;
+			padding: 8px 0;
+			font-size: 14px;
+		}
+	}
+	.upload-sign {
+		.btn {
+			min-width: 140px;
+			padding: 8px 0;
+			font-size: 14px;
+		}
+		width: 100%;
+		width: 100%;
+	}
+	.service-upload {
+		width: 100%;
+		width: 100%;
+	}
+	.add-links {
+		font-size: 14px;
+	}
+	.invoice-total-footer {
+		h4 {
+			font-size: 14px;
+			font-size: 14px;
+		}
+	}
+	.invoice-add-table {
+		th {
+			font-size: 14px;
+		}
+		h4 {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+	}
+	.invoice-item {
+		.customer-text {
+			font-size: 16px;
+			font-size: 16px;
+		}
+		.invoice-details-two {
+			margin-bottom: 20px;
+			font-size: 14px;
+			margin-bottom: 20px;
+			font-size: 14px;
+		}
+	}
+	.invoices-page-header {
+		.invoices-breadcrumb-item {
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+	.invoices-create-btn {
+		.invoices-preview-link {
+			margin-right: 0;
+			margin-right: 0;
+		}
+		.delete-invoice-btn {
+			display: none;
+		}
+		.save-invoice-btn {
+			display: none;
+		}
+		.btn {
+			display: none;
+			display: none;
+		}
+	}
+	.customer-text-one {
+		font-size: 16px;
+	}
+	.invoice-name {
+		font-size: 14px;
+	}
+	.invoice-head {
+		h2 {
+			font-size: 16px;
+			font-size: 16px;
+		}
+		p {
+			font-size: 14px;
+			font-size: 14px;
+		}
+	}
+	.form-header {
+		h4 {
+			font-size: 18px;
+		}
+	}
+	.bank-details-btn {
+		.btn {
+			min-width: 120px;
+			padding: 7px 0;
+			font-size: 14px;
+		}
+	}
+	.bank-details {
+		.modal-footer {
+			padding: 15px;
+		}
+	}
+	.invoice-payment-box {
+		.payment-details {
+			p {
+				font-size: 14px;
+				font-size: 14px;
+			}
+			margin-bottom: 20px;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		h4 {
+			font-size: 15px;
+			font-size: 15px;
+		}
+	}
+	.invoice-item-one {
+		.invoice-info {
+			text-align: left;
+			text-align: left;
+		}
+		.invoice-details {
+			text-align: left;
+		}
+	}
+	.invoice-terms {
+		p {
+			font-size: 14px;
+		}
+	}
+	.nav-tabs.menu-tabs {
+		.nav-link {
+			display: block;
+			text-align: center;
+		}
+		.nav-item {
+			display: block;
+		}
+	}
+	.card {
+		.card-header {
+			.card-title {
+				font-size: 16px;
+			}
+		}
+	}
+	.links-cont {
+		.form-group {
+			margin-bottom: 10px;
+		}
+	}
+	.settings-form {
+		.trash {
+			margin-bottom: 10px;
+		}
+	}
+	.settings-menu-links {
+		.nav {
+			display: block;
+		}
+	}
+	.invoice-inner-date {
+		padding: 15px;
+		padding-bottom: 0;
+	}
+	.invoice-item-two {
+		.invoice-info2 {
+			text-align: left;
+		}
+		.invoice-details {
+			text-align: left;
+		}
+	}
+	.invoice-item-box {
+		width: 100%;
+		float: left;
+	}
+	.invoice-issues-date {
+		padding-top: 10px;
+		padding-bottom: 0;
+	}
+	.invoices-settings-btn-one {
+		margin-top: 0;
+	}
+	.payment-details {
+		width: auto;
+	}
+	.invoice-setting-btn {
+		.btn {
+			min-width: 118px;
+			padding: 7px 0;
+			font-size: 14px;
+		}
+	}
+	.invoice-faq {
+		margin-bottom: 20px;
+	}
+	.language-drop {
+		display: none;
+	}
+	.zoom-screen {
+		display: none;
+	}
+	.activity-awards {
+		display: block;
+		margin-bottom: 20px;
+	}
+	.award-list-outs {
+		margin: 10px 0px;
+	}
+	.sm-box {
+		p {
+			font-size: 16px;
+		}
+		h6 {
+			font-size: 20px;
+		}
+	}
+	.social-boxs {
+		background: #fff;
+		width: 40px;
+		height: 40px;
+		img {
+			max-width: 25px;
+		}
+	}
+	.lesson {
+		.btn-info {
+			padding: 2px 7px;
+			font-size: 13px;
+		}
+	}
+	.circle-bar {
+		>div {
+			canvas {
+				width: 130px !important;
+				height: 130px !important;
+			}
+			b {
+				font-size: 20px;
+			}
+		}
+	}
+	.activity-feed {
+		.feed-item {
+			display: block !important;
+		}
+	}
+	.teacher-date-list {
+		display: block !important;
+		margin: 10px 0px;
+		li {
+			&:last-child {
+				margin-left: 0;
+			}
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+	.skip-group {
+		.skip-btn {
+			margin-bottom: 0;
+		}
+		margin-bottom: 10px;
+	}
+	.profile-user-img {
+		img {
+			border: 4px solid #fff;
+			width: 90px;
+		}
+	}
+	.names-profiles {
+		h4 {
+			font-size: 16px;
+		}
+		h5 {
+			font-size: 13px;
+		}
+	}
+	.follow-group {
+		padding: 0px 10px;
+	}
+	.students-follows {
+		h4 {
+			font-size: 18px;
+		}
+	}
+	.follow-btn-group {
+		margin: 10px 0px;
+		.btn-info {
+			min-width: 100px;
+			font-size: 14px;
+			padding: 5px 15px;
+		}
+	}
+	.profile-edit-icon {
+		width: 26px;
+		height: 26px;
+		i {
+			font-size: 12px;
+		}
+	}
+	.user-img {
+		.user-text {
+			display: none;
+		}
+	}
+	.star-student.table-striped {
+		tbody {
+			tr {
+				td {
+					font-size: 14px;
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.activity-btns {
+		.btn-info {
+			min-width: 125px;
+		}
+	}
+	.chart-list-out {
+		span {
+			width: 5px;
+			height: 5px;
+		}
+		li {
+			margin-right: 5px;
+		}
+	}
+	.lesson-view-all {
+		a {
+			font-size: 12px;
+		}
+	}
+	.search-student-btn {
+		.btn-primary {
+			min-width: 120px;
+			padding: 6px 15px;
+		}
+		margin-bottom: 20px;
+	}
+	.btn-outline-gray {
+		width: 30px;
+		height: 30px;
+	}
+	.download-grp {
+		.btn-outline-primary {
+			font-size: 14px;
+			padding: 3px 9px;
+		}
+		.btn-primary {
+			padding: 2px 7px;
+			i {
+				font-size: 13px;
+			}
+		}
+	}
+}
+@media (max-width: 575.98px) {
+	.card {
+		margin-bottom: 0.9375rem;
+	}
+	.page-wrapper {
+		>.content {
+			padding: 0.9375rem 0.9375rem 0;
+		}
+	}
+	.card-body {
+		padding: 1.25rem;
+	}
+	.card-header {
+		padding: .75rem 1.25rem;
+	}
+	.card-footer {
+		padding: .75rem 1.25rem;
+	}
+	.card-chart {
+		.card-body {
+			padding: 5px;
+		}
+	}
+	.page-header {
+		margin-bottom: 0.9375rem;
+		.breadcrumb {
+			display: none;
+		}
+	}
+	.account-wrapper {
+		padding: 0.9375rem;
+	}
+	.profile-image {
+		flex: 0 0 100%;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.profile-user-info {
+		text-align: center;
+	}
+	.profile-btn {
+		text-align: center;
+	}
+	.fc-toolbar {
+		.fc-right {
+			display: inline-block;
+			float: none;
+			margin: 10px auto 0;
+			width: auto;
+			clear: both;
+		}
+		.fc-left {
+			float: none;
+			margin: 0 auto;
+			width: 200px;
+		}
+		.fc-center {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			h2 {
+				width: 100%;
+			}
+		}
+	}
+	.profile-tab-cont {
+		padding-top: 1.25rem;
+	}
+	.about-info {
+		.media {
+			flex-direction: column;
+		}
+		ul {
+			li {
+				font-size: 13px;
+			}
+		}
+	}
+	.title-span {
+		width: 100px;
+	}
+	.dash-widget1 {
+		display: block;
+		.circle-bar {
+			width: auto;
+			padding-right: 0px;
+			text-align: center;
+		}
+		ul {
+			margin: 0 0px;
+			li {
+				width: auto;
+				display: inline-block;
+			}
+		}
+	}
+	.dash-widget2 {
+		border: none;
+	}
+	.dash-details {
+		padding-top: 20px;
+		text-align: left;
+	}
+	.view-link {
+		font-size: 13px;
+	}
+}
+@media (max-width: 479px) {
+	.dropdown-menu.notifications.show {
+		transform: translate3d(-190px, 60px, 0px) !important;
+	}
+	.user-menu {
+		.dropdown-menu {
+			width: 310px;
+		}
+	}
+	.notifications {
+		.noti-content {
+			width: 310px;
+			height: 355px;
+		}
+	}
+	.form-group.local-forms.angular-cal {
+		margin-bottom: 80px;
+	}
+}

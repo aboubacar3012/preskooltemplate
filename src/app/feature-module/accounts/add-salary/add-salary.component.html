@@ -1,0 +1,107 @@
+<div class="content container-fluid">
+				
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Salary</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/accounts/salary'">Accounts</a></li>
+          <li class="breadcrumb-item active">Add Salary</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+    
+      <div class="card">
+        <div class="card-body">
+          <form  [formGroup]="addSalaryForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Salary Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Staff ID <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addSalaryForm.get('staffId')?.invalid && addSalaryForm.get('staffId')?.touched"
+                  formControlName="staffId">
+                  <div
+                  *ngIf="addSalaryForm.get('staffId')?.invalid && addSalaryForm.get('staffId')?.touched">
+                  <small
+                      *ngIf="addSalaryForm.get('staffId')?.invalid && addSalaryForm.get('staffId')?.touched"
+                      class="text-danger"> *Staff Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Name <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control"[class.invalid]="addSalaryForm.get('name')?.invalid && addSalaryForm.get('name')?.touched"
+                  formControlName="name">
+                  <div
+                  *ngIf="addSalaryForm.get('name')?.invalid && addSalaryForm.get('name')?.touched">
+                  <small
+                      *ngIf="addSalaryForm.get('name')?.invalid && addSalaryForm.get('name')?.touched"
+                      class="text-danger"> *Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms ">
+                  <label  htmlFor="">Gender <span class="login-danger">*</span></label>
+                  <select class="form-control select form-select">
+                    <option>Select Gender</option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Others</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms ">
+                  <label  htmlFor="">Joining Date <span class="login-danger">*</span></label>
+                  <!-- <input class="form-control datetimepicker" type="date"  [class.invalid]="addSalaryForm.get('joiningDate')?.invalid && addSalaryForm.get('joiningDate')?.touched"
+                  formControlName="joiningDate"> -->
+                  <input class="form-control datetimepicker" 
+                  matInput [matDatepicker]="picker"
+                  [class.invalid]="addSalaryForm.get('joiningDate')?.invalid && addSalaryForm.get('joiningDate')?.touched"
+                  formControlName="joiningDate">
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <div
+                  *ngIf="addSalaryForm.get('joiningDate')?.invalid && addSalaryForm.get('joiningDate')?.touched">
+                  <small
+                      *ngIf="addSalaryForm.get('joiningDate')?.invalid && addSalaryForm.get('joiningDate')?.touched"
+                      class="text-danger"> *Joining Date is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Amount <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control"[class.invalid]="addSalaryForm.get('amount')?.invalid && addSalaryForm.get('amount')?.touched"
+                  formControlName="amount">
+                  <div
+                  *ngIf="addSalaryForm.get('amount')?.invalid && addSalaryForm.get('amount')?.touched">
+                  <small
+                      *ngIf="addSalaryForm.get('amount')?.invalid && addSalaryForm.get('amount')?.touched"
+                      class="text-danger"> *Amount is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="student-submit">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>							
+    </div>					
+  </div>					
+</div>		

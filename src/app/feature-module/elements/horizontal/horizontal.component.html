@@ -1,0 +1,57 @@
+<!-- Page Header -->
+<div class="page-header">
+  <div class="row">
+    <div class="col">
+      <h3 class="page-title">Horizontal Timeline</h3>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="'/dashboard/main'">Dashboard</a></li>
+        <li class="breadcrumb-item active">Components</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- /Page Header -->
+<div class="row">
+  <!-- Timeline -->
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <mat-stepper #stepper>
+          <ng-container *ngFor="let item of dates; let i = index">
+            <mat-step>
+              <ng-template matStepLabel>{{ item }}</ng-template>
+              <p class="m-t-40">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
+                praesentium officia, fugit recusandae ipsa, quia velit nulla
+                adipisci? Consequuntur aspernatur at, eaque hic repellendus sit
+                dicta consequatur quae, ut harum ipsam molestias maxime non nisi
+                reiciendis eligendi! Doloremque quia pariatur harum ea amet
+                quibusdam quisquam, quae, temporibus dolores porro doloribus.
+              </p>
+              <div>
+                <button *ngIf="i > 0" mat-button matStepperPrevious>
+                  Back
+                </button>
+                <button
+                  [hidden]="i === dates.length - 1"
+                  mat-button
+                  matStepperNext
+                >
+                  Next
+                </button>
+                <button
+                  *ngIf="i === dates.length - 1"
+                  mat-button
+                  (click)="stepper.reset()"
+                >
+                  Reset
+                </button>
+              </div>
+            </mat-step>
+          </ng-container>
+        </mat-stepper>
+      </div>
+    </div>
+  </div>
+  <!-- /Ribbon -->
+</div>

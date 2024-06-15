@@ -1,0 +1,20 @@
+<div class="main-wrapper "
+  [ngClass]="{
+    'expand-menu':
+      expandMenu === 'true' && miniSidebar === 'true' ,
+    'mini-sidebar': miniSidebar === 'true',
+    'slide-nav': mobileSidebar === 'true' 
+  }"
+>
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="page-wrapper">
+<router-outlet></router-outlet>
+</div>
+<a href="javascript:void(0);" (click)="toggleMobileSideBar()">
+  <div class="sidebar-overlay" [ngClass]="{
+    'opened': mobileSidebar === 'true' 
+  }"></div>
+</a>
+
+</div>

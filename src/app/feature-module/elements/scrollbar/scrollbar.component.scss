@@ -1,0 +1,12 @@
+.scroll-demo {
+  height: 300px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+.horizontal-scroll {
+  overflow-y: hidden !important;
+}

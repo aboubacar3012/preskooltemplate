@@ -1,0 +1,141 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Events</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/dashboard/dashboard-main">Dashboard</a></li>
+          <li class="breadcrumb-item active">Events</li>
+        </ul>
+      </div>
+      <div class="col-auto text-end float-end ms-auto">
+        <a routerLink = "/events/events-add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class='demo-app'>
+
+            <!-- <div class='demo-app-sidebar'>
+              <div class='demo-app-sidebar-section'>
+                <h2>Instructions</h2>
+                <ul>
+                  <li>Select dates and you will be prompted to create a new event</li>
+                  <li>Drag, drop, and resize events</li>
+                  <li>Click an event to delete it</li>
+                </ul>
+              </div>
+              <div class='demo-app-sidebar-section'>
+                <label  htmlFor="">
+                  <input
+                    type='checkbox'
+                    [checked]='calendarVisible'
+                    (change)='handleCalendarToggle()'
+                  />
+                  toggle whole calendar
+                </label>
+              </div>
+              <div class='demo-app-sidebar-section'>
+                <label  htmlFor="">
+                  <input
+                    type='checkbox'
+                    [checked]='calendarOptions.weekends'
+                    (change)='handleWeekendsToggle()'
+                  />
+                  toggle weekends
+                </label>
+              </div>
+              <div class='demo-app-sidebar-section'>
+                <h2>All Events ({{currentEvents.length}})</h2>
+                <ul>
+                  <li *ngFor='let event of currentEvents'>
+                    <b>{{event.startStr}}</b>
+                    <i>{{event.title}}</i>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+          
+            <div class='demo-app-main'>
+              <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+                <ng-template #eventContent let-arg>
+                  <b>{{ arg.timeText }}</b>
+                  <i>{{ arg.event.title }}</i>
+                </ng-template>
+              </full-calendar>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Add Event Modal -->
+   <div class="modal fade none-border" id="my_event">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Event</h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+          <label htmlFor="" class='control-label'>Event Name</label>
+          <input class='form-control' placeholder='Insert Event Name' type='text'>
+          <label htmlFor="" class='control-label'>Category</label>
+          <select class='form-control' name='category'>
+            <option value='bg-danger'>Danger</option>
+            <option value='bg-success'>Success</option>
+            <option value='bg-purple'>Purple</option>
+            <option value='bg-primary'>Primary</option>
+            <option value='bg-info'>Info</option>
+            <option value='bg-warning'>Warning</option>;
+          </select>
+        </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-success save-event submit-btn">Create event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Add Event Modal -->
+
+   <!-- Edit Event Modal -->
+   <div class="modal fade none-border" id="edit_event">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Event</h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label  htmlFor="">Change event name</label>
+            <div class='input-group'>
+              <input class='form-control' type=text
+              ><button type='submit' class='btn btn-success'><i class='fa fa-check'></i> Save</button>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-danger delete-event submit-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Edit Event Modal -->
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>COPYRIGHT © 2023 DREAMSTECHNOLOGIES.</p>
+</footer>
+<!-- /Footer -->

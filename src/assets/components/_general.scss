@@ -1,0 +1,190 @@
+html {
+	height: 100%;
+}
+body {
+	background-color: $background-color_1;
+	color: $color_1;
+	font-family: $font-family_1;
+	font-size: 15px;
+	height: 100%;
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+h1 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+h2 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+h3 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+h4 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+h5 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+h6 {
+	font-family: $font-family_1;
+	margin-top: 0;
+	color: $color_2;
+}
+a {
+	&:hover {
+		outline: none;
+		text-decoration: none;
+	}
+	&:active {
+		outline: none;
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+	color: $color_3;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+input {
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+		box-shadow: 0 0 0px 1000px white inset !important;
+		&:hover {
+			-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+			box-shadow: 0 0 0px 1000px white inset !important;
+		}
+		&:focus {
+			-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+			box-shadow: 0 0 0px 1000px white inset !important;
+		}
+	}
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	outline: none;
+	&:focus {
+		outline: none;
+	}
+}
+.form-control {
+	border: 1px solid #ddd;
+	box-shadow: none;
+	color: $color_1;
+	font-size: 15px;
+	height: 45px;
+	&:focus {
+		border-color: $border-color_1;
+		box-shadow: none;
+		outline: 0 none;
+	}
+}
+.form-control.form-control-sm {
+	height: calc(1.5em + .5rem + 2px);
+}
+.form-control-sm {
+	background-color: $background-color_2;
+}
+.form-control.form-control-lg {
+	height: calc(1.5em + 1rem + 2px);
+}
+button {
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	outline: none;
+	&:focus {
+		outline: none;
+	}
+}
+input[type="file"] {
+	height: auto;
+	min-height: calc(1.5em + .75rem + 2px);
+}
+input[type=text] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+textarea.form-control {
+	resize: vertical;
+	min-height: 120px;
+}
+.navbar-nav {
+	>li {
+		float: left;
+	}
+	.open {
+		.dropdown-menu {
+			border: 0;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: $background-color_2;
+		}
+	}
+}
+.form-group {
+	margin-bottom: 1.25rem;
+}
+label {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+}
+.input-group {
+	.form-control {
+		height: 40px;
+	}
+	.input-height {
+		height: auto;
+	}
+}
+.nav {
+	.open {
+		>a {
+			background-color: $background-color_3;
+			border-color: $border-color_2;
+			&:focus {
+				background-color: $background-color_3;
+				border-color: $border-color_2;
+			}
+			&:hover {
+				background-color: $background-color_3;
+				border-color: $border-color_2;
+			}
+		}
+	}
+}
+.font-weight-600 {
+	font-weight: 600;
+}
+ul {
+	padding: 0px;
+	list-style: none;
+}
+ol {
+	padding: 0px;
+	list-style: none;
+}

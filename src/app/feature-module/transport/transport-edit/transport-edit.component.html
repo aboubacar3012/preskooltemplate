@@ -1,0 +1,115 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Edit Transport</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink] = "routes.transport">Transport</a></li>
+          <li class="breadcrumb-item active">Edit Transport</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="editTransport()" [formGroup]="editTransportForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Transport Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="name">Route Name<span class="mandatory">*</span></label>
+                  <input type="text" id="name" class="form-control" [class.invalid]="editTransportForm.get('routeName')?.invalid && editTransportForm.get('routeName')?.touched"
+                  formControlName="routeName">
+                  <div
+                  *ngIf="editTransportForm.get('routeName')?.invalid && editTransportForm.get('routeName')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('routeName')?.invalid && editTransportForm.get('routeName')?.touched"
+                      class="text-danger"> *RouteName is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="vehicle-number">Vehicle Number<span class="mandatory">*</span></label>
+                  <input type="text" id="vehicle-number" class="form-control" [class.invalid]="editTransportForm.get('vehicleNumber')?.invalid && editTransportForm.get('vehicleNumber')?.touched"
+                  formControlName="vehicleNumber">
+                  <div
+                  *ngIf="editTransportForm.get('vehicleNumber')?.invalid && editTransportForm.get('vehicleNumber')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('vehicleNumber')?.invalid && editTransportForm.get('vehicleNumber')?.touched"
+                      class="text-danger"> *vehicle Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="driver-name">Driver Name<span class="mandatory">*</span></label>
+                  <input id="driver-name"  type="text" class="form-control" [class.invalid]="editTransportForm.get('driverName')?.invalid && editTransportForm.get('driverName')?.touched"
+                  formControlName="driverName">
+                  <div
+                  *ngIf="editTransportForm.get('driverName')?.invalid && editTransportForm.get('driverName')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('driverName')?.invalid && editTransportForm.get('driverName')?.touched"
+                      class="text-danger"> *DriverName is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="licenseNumber">License Number<span class="mandatory">*</span></label>
+                  <input id="licenseNumber" type="text" class="form-control" [class.invalid]="editTransportForm.get('licenseNumber')?.invalid && editTransportForm.get('licenseNumber')?.touched"
+                  formControlName="licenseNumber">
+                  <div
+                  *ngIf="editTransportForm.get('licenseNumber')?.invalid && editTransportForm.get('licenseNumber')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('licenseNumber')?.invalid && editTransportForm.get('licenseNumber')?.touched"
+                      class="text-danger"> *License Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="contactNumber">Contact Number<span class="mandatory">*</span></label>
+                  <input id="contactNumber" type="text" class="form-control" [class.invalid]="editTransportForm.get('contactNumber')?.invalid && editTransportForm.get('contactNumber')?.touched"
+                  formControlName="contactNumber">
+                  <div
+                  *ngIf="editTransportForm.get('contactNumber')?.invalid && editTransportForm.get('contactNumber')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('contactNumber')?.invalid && editTransportForm.get('contactNumber')?.touched"
+                      class="text-danger"> *Contact Number is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label htmlFor="driverAddress">Driver Address<span class="mandatory">*</span></label>
+                  <input id="driverAddress" type="text" class="form-control" [class.invalid]="editTransportForm.get('driverAddress')?.invalid && editTransportForm.get('driverAddress')?.touched"
+                  formControlName="driverAddress">
+                  <div
+                  *ngIf="editTransportForm.get('driverAddress')?.invalid && editTransportForm.get('driverAddress')?.touched">
+                  <small
+                      *ngIf="editTransportForm.get('driverAddress')?.invalid && editTransportForm.get('driverAddress')?.touched"
+                      class="text-danger"> *Driver Address is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

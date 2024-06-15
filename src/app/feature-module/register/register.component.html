@@ -1,0 +1,145 @@
+		<!-- Main Wrapper -->
+    <div class="main-wrapper login-body">
+      <div class="login-wrapper">
+        <div class="container">
+            <div class="loginbox">
+                <div class="login-left">
+        <img class="img-fluid" src="assets/img/login.png" alt="Logo">
+                  </div>
+                  <div class="login-right">
+        <div class="login-right-wrap">
+          <h1>Sign Up</h1>
+          <p class="account-subtitle">Enter details to create your account</p>
+
+          <!-- Form -->
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label  htmlFor="">Username <span class="login-danger">*</span></label>
+              <input class="form-control" type="text"/>
+              <span class="profile-views"><i class="fas fa-user-circle"></i></span>
+            </div>
+            <div class="form-group">
+              <label  htmlFor="">Email <span class="login-danger">*</span></label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="email"
+                id="email"
+                [ngClass]="{
+                  'is-invalid': f['email'].touched && f['email'].invalid
+                }"
+              />
+              <span class="profile-views"><i class="fas fa-envelope"></i></span>
+              <div
+                *ngIf="f['email'].touched && f['email'].invalid"
+                class="invalid-feedback"
+              >
+                <div
+                  *ngIf="f['email'].errors && f['email'].errors['required']"
+                >
+                  Email is required.
+                </div>
+              </div>
+              <div *ngIf="CustomControler !== ''"  class="invalid-feedback">
+                {{ CustomControler }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label  htmlFor="">Password <span class="login-danger">*</span></label>
+              <input
+                class="form-control"
+                [type]="Toggledata ? 'password' : 'text'"
+                formControlName="password"
+                id="password"
+                [ngClass]="{
+                  'is-invalid': f['password'].touched && f['password'].invalid
+                }"
+              />
+              <a href="javascript:void(0);" class="text-dark" (click)="iconLogle()">
+                <span
+            [ngClass]="Toggledata === false ? 'fas toggle-password fa-eye' : 'fas toggle-password fa-eye-slash'"
+              
+            ></span>
+              </a>
+              <div
+              *ngIf="f['password'].touched && f['password'].invalid"
+              class="invalid-feedback"
+            >
+              <div
+                *ngIf="
+                  f['password'].errors && f['password'].errors['required']
+                "
+              >
+                Password is required.
+              </div>
+            </div>
+            </div>
+            <div class="form-group">
+              <label  htmlFor="">Confirm password <span class="login-danger">*</span></label>
+              <input
+                class="form-control"
+                [type]="Toggledata ? 'password' : 'text'"
+                formControlName="confirmPassword"
+                id="confirmPassword"
+                [ngClass]="{
+                  'is-invalid': f['confirmPassword'].touched && f['confirmPassword'].invalid
+                }"
+              />
+            <a href="javascript:void(0);" class="text-dark" (click)="iconLogle()">
+              <span
+          [ngClass]="Toggledata === false ? 'fas toggle-password fa-eye' : 'fas toggle-password fa-eye-slash'"
+            
+          ></span>
+            </a>
+              <div
+              *ngIf="
+                f['confirmPassword'].touched && f['confirmPassword'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div
+                *ngIf="
+                  f['confirmPassword'].errors &&
+                  f['confirmPassword'].errors['required']
+                "
+              >
+                Confirm Password is required.
+              </div>
+            </div>
+            <div *ngIf="isvalidconfirmpassword" class="invalid-feedback">
+              Password not matching
+            </div>
+            </div>
+            <div class=" dont-have">Already Registered?  <a [routerLink]="'/login'">Login</a></div>
+            <div class="form-group mb-0">
+              <button class="btn btn-primary w-100" 
+               type="submit"
+               [disabled]="form.invalid"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+          <!-- /Form -->
+          
+          <div class="login-or">
+            <span class="or-line"></span>
+            <span class="span-or">or</span>
+          </div>
+          
+          <!-- Social Login -->
+          <div class="social-login">
+            <a href="#" ><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" ><i class="fab fa-facebook-f"></i></a>
+            <a href="#" ><i class="fab fa-twitter"></i></a>
+            <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <!-- /Social Login -->
+          
+        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- /Main Wrapper -->

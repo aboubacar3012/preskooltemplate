@@ -1,0 +1,160 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Books</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/library/library-main'">Library</a></li>
+          <li class="breadcrumb-item active">Add Books</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addLibrary()" [formGroup]="addLibraryForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Book Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Book ID<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addLibraryForm.get('bookId')?.invalid && addLibraryForm.get('bookId')?.touched"
+                  formControlName="bookId">
+                  <div
+                  *ngIf="addLibraryForm.get('bookId')?.invalid && addLibraryForm.get('bookId')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('bookId')?.invalid && addLibraryForm.get('bookId')?.touched"
+                      class="text-danger"> *Book Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Book Name<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addLibraryForm.get('bookName')?.invalid && addLibraryForm.get('bookName')?.touched"
+                  formControlName="bookName">
+                  <div
+                  *ngIf="addLibraryForm.get('bookName')?.invalid && addLibraryForm.get('bookName')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('bookName')?.invalid && addLibraryForm.get('bookName')?.touched"
+                      class="text-danger"> *Book Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Language<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addLibraryForm.get('language')?.invalid && addLibraryForm.get('language')?.touched"
+                  formControlName="language">
+                  <option value = "">Select Language</option>
+                  <option value = "English">English</option>
+                  <option value = "Turkish">Turkish</option>
+                  <option value = "Chinese">Chinese</option>
+                  <option value = "Spanish">Spanish</option>
+                  <option value = "Arabic">Arabic</option>
+                  </select>
+                  <div
+                  *ngIf="addLibraryForm.get('language')?.invalid && addLibraryForm.get('language')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('language')?.invalid && addLibraryForm.get('language')?.touched"
+                      class="text-danger"> *Language is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Department<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addLibraryForm.get('department')?.invalid && addLibraryForm.get('department')?.touched"
+                  formControlName="department">
+                  <div
+                  *ngIf="addLibraryForm.get('department')?.invalid && addLibraryForm.get('department')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('department')?.invalid && addLibraryForm.get('department')?.touched"
+                      class="text-danger"> *Department is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Class<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addLibraryForm.get('class')?.invalid && addLibraryForm.get('class')?.touched"
+                  formControlName="class">
+                  <option value = "">Select Class</option>
+                  <option value = "LKG">LKG</option>
+                  <option value = "UKG">UKG</option>
+                  <option value = "1">1</option>
+                  <option value = "2">2</option>
+                  <option value = "3">3</option>
+                  <option value = "4">4</option>
+                  <option value = "5">5</option>
+                  <option value = "6">6</option>
+                  <option value = "7">7</option>
+                  <option value = "8">8</option>
+                  <option value = "9">9</option>
+                  <option value = "10">10</option>
+                  <option value = "11">11</option>
+                  <option value = "12">12</option>
+                  </select>
+                  <div
+                  *ngIf="addLibraryForm.get('class')?.invalid && addLibraryForm.get('class')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('class')?.invalid && addLibraryForm.get('class')?.touched"
+                      class="text-danger"> *Class is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Type<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addLibraryForm.get('type')?.invalid && addLibraryForm.get('type')?.touched"
+                  formControlName="type">
+                  <option value = "">Select Type</option>
+                  <option value = "Book">Book</option>
+                  <option value = "DVD">DVD</option>
+                  <option value = "CD">CD</option>
+                  <option value = "Newspaper">Newspaper</option>
+                  </select>
+                  <div
+                  *ngIf="addLibraryForm.get('type')?.invalid && addLibraryForm.get('type')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('type')?.invalid && addLibraryForm.get('type')?.touched"
+                      class="text-danger"> *Type is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Status<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addLibraryForm.get('status')?.invalid && addLibraryForm.get('status')?.touched"
+                  formControlName="status">
+                  <option value = "">Select Status</option>
+                  <option value = "In Stock">In Stock</option>
+                  <option value = "Out Of Stock">Out of Stock</option>
+                  </select>
+                  <div
+                  *ngIf="addLibraryForm.get('status')?.invalid && addLibraryForm.get('status')?.touched">
+                  <small
+                      *ngIf="addLibraryForm.get('status')?.invalid && addLibraryForm.get('status')?.touched"
+                      class="text-danger"> *Status is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

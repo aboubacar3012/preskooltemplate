@@ -1,0 +1,124 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Edit Rooms</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/hostel/hostel-main'">Hostel</a></li>
+          <li class="breadcrumb-item active">Edit Rooms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="editHostel()" [formGroup]="editHostelForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Room Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Block<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editHostelForm.get('block')?.invalid && editHostelForm.get('block')?.touched"
+                  formControlName="block">
+                  <div
+                  *ngIf="editHostelForm.get('block')?.invalid && editHostelForm.get('block')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('block')?.invalid && editHostelForm.get('block')?.touched"
+                      class="text-danger"> *Block is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Room No<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editHostelForm.get('roomNo')?.invalid && editHostelForm.get('roomNo')?.touched"
+                  formControlName="roomNo">
+                  <div
+                  *ngIf="editHostelForm.get('roomNo')?.invalid && editHostelForm.get('roomNo')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('roomNo')?.invalid && editHostelForm.get('roomNo')?.touched"
+                      class="text-danger"> *Room no is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Room Type<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="editHostelForm.get('roomType')?.invalid && editHostelForm.get('roomType')?.touched"
+                  formControlName="roomType">
+                    <option value = "">Select Type</option>
+                    <option value = "Normal">Normal</option>
+                    <option value = "AC">AC</option>
+                    <option value = "Suite">Suite</option>
+                  </select>
+                  <div
+                  *ngIf="editHostelForm.get('roomType')?.invalid && editHostelForm.get('roomType')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('roomType')?.invalid && editHostelForm.get('roomType')?.touched"
+                      class="text-danger"> *Room Type is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">No of Beds<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editHostelForm.get('noOfBeds')?.invalid && editHostelForm.get('noOfBeds')?.touched"
+                  formControlName="noOfBeds">
+                  <div
+                  *ngIf="editHostelForm.get('noOfBeds')?.invalid && editHostelForm.get('noOfBeds')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('noOfBeds')?.invalid && editHostelForm.get('noOfBeds')?.touched"
+                      class="text-danger"> *No Of Beds is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Cose per Bed<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editHostelForm.get('costPerBed')?.invalid && editHostelForm.get('costPerBed')?.touched"
+                  formControlName="costPerBed">
+                  <div
+                  *ngIf="editHostelForm.get('costPerBed')?.invalid && editHostelForm.get('costPerBed')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('costPerBed')?.invalid && editHostelForm.get('costPerBed')?.touched"
+                      class="text-danger"> *Cost Per Bed is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Availability<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="editHostelForm.get('availability')?.invalid && editHostelForm.get('availability')?.touched"
+                  formControlName="availability">
+                    <option value = "">Select Availability</option>
+                    <option value = "Available">Available</option>
+                    <option value = "Full">Not Available</option>
+                  </select>
+                  <div
+                  *ngIf="editHostelForm.get('availability')?.invalid && editHostelForm.get('availability')?.touched">
+                  <small
+                      *ngIf="editHostelForm.get('availability')?.invalid && editHostelForm.get('availability')?.touched"
+                      class="text-danger"> *Availability is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

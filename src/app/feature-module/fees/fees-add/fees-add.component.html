@@ -1,0 +1,124 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Fees</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink] = "routes.fees">Fees</a></li>
+          <li class="breadcrumb-item active">Add Fees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addFees()" [formGroup]="addFeesForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Fees Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees ID<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control"[class.invalid]="addFeesForm.get('feesId')?.invalid && addFeesForm.get('feesId')?.touched"
+                  formControlName="feesId">
+                  <div
+                  *ngIf="addFeesForm.get('feesId')?.invalid && addFeesForm.get('feesId')?.touched">
+                  <small
+                      *ngIf="addFeesForm.get('feesId')?.invalid && addFeesForm.get('feesId')?.touched"
+                      class="text-danger"> *Fees Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees Type<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="addFeesForm.get('feesType')?.invalid && addFeesForm.get('feesType')?.touched"
+                  formControlName="feesType">
+                    <option value = "">Select Type</option>
+                    <option value = "Class Test">Class Test</option>
+                    <option value = "Exam Fees">Exam Fees</option>
+                    <option value = "Hostel Fees">Hostel Fees</option>
+                    <option value = "Transport Fees">Transport Fees</option>
+                    <option value = "Mess Fees">Mess Fees</option>
+                  </select>
+                  <div
+                  *ngIf="addFeesForm.get('feesType')?.invalid && addFeesForm.get('feesType')?.touched">
+                  <small
+                      *ngIf="addFeesForm.get('feesType')?.invalid && addFeesForm.get('feesType')?.touched"
+                      class="text-danger"> *Fees type is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Gender<span class="mandatory">*</span></label>
+                  <select class="form-control"[class.invalid]="addFeesForm.get('gender')?.invalid && addFeesForm.get('gender')?.touched"
+                  formControlName="gender">
+                    <option value = "">Select Gender</option>
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Others">Others</option>
+
+                  </select>
+                  <div
+                  *ngIf="addFeesForm.get('gender')?.invalid && addFeesForm.get('gender')?.touched">
+                  <small
+                      *ngIf="addFeesForm.get('gender')?.invalid && addFeesForm.get('gender')?.touched"
+                      class="text-danger"> *Gender is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees Amount<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addFeesForm.get('feesAmount')?.invalid && addFeesForm.get('feesAmount')?.touched"
+                  formControlName="feesAmount">
+                  <div
+                  *ngIf="addFeesForm.get('feesAmount')?.invalid && addFeesForm.get('feesAmount')?.touched">
+                  <small
+                      *ngIf="addFeesForm.get('feesAmount')?.invalid && addFeesForm.get('feesAmount')?.touched"
+                      class="text-danger"> *Fees amount is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">Start Date<span class="mandatory">*</span></label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">End Date<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addFeesForm.get('endDate')?.invalid && addFeesForm.get('endDate')?.touched"
+                  formControlName="endDate" matInput [matDatepicker]="picker2" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <div
+                  *ngIf="addFeesForm.get('endDate')?.invalid && addFeesForm.get('endDate')?.touched">
+                  <small
+                      *ngIf="addFeesForm.get('endDate')?.invalid && addFeesForm.get('endDate')?.touched"
+                      class="text-danger"> *End date is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

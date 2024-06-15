@@ -1,0 +1,116 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Edit Fees</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink] = "routes.fees">Fees</a></li>
+          <li class="breadcrumb-item active">Edit Fees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="editFees()" [formGroup]="editFeesForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Fees Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees ID<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editFeesForm.get('feesId')?.invalid && editFeesForm.get('feesId')?.touched"
+                  formControlName="feesId">
+                  <div
+                  *ngIf="editFeesForm.get('feesId')?.invalid && editFeesForm.get('feesId')?.touched">
+                  <small
+                      *ngIf="editFeesForm.get('feesId')?.invalid && editFeesForm.get('feesId')?.touched"
+                      class="text-danger"> *Fees Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees Type<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="editFeesForm.get('feesType')?.invalid && editFeesForm.get('feesType')?.touched"
+                  formControlName="feesType">
+                    <option value = "Exam Fees">Exam Fees</option>
+                    <option value = "Class Test">Class Test</option>
+                    <option value = "Exam Fees">Exam Fees</option>
+                    <option value = "Hostel Fees">Hostel Fees</option>
+                    <option value = "Transport Fees">Transport Fees</option>
+                    <option value = "Mess Fees">Mess Fees</option>
+                  </select>
+                  <div
+                  *ngIf="editFeesForm.get('feesType')?.invalid && editFeesForm.get('feesType')?.touched">
+                  <small
+                      *ngIf="editFeesForm.get('feesType')?.invalid && editFeesForm.get('feesType')?.touched"
+                      class="text-danger"> *Fees Type is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Gender<span class="mandatory">*</span></label>
+                  <select class="form-control" [class.invalid]="editFeesForm.get('gender')?.invalid && editFeesForm.get('gender')?.touched"
+                  formControlName="gender">
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Others">Others</option>
+
+                  </select>
+                  <div
+                  *ngIf="editFeesForm.get('gender')?.invalid && editFeesForm.get('gender')?.touched">
+                  <small
+                      *ngIf="editFeesForm.get('gender')?.invalid && editFeesForm.get('gender')?.touched"
+                      class="text-danger"> *Gender is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Fees Amount<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="editFeesForm.get('amount')?.invalid && editFeesForm.get('amount')?.touched"
+                  formControlName="amount">
+                  <div
+                  *ngIf="editFeesForm.get('amount')?.invalid && editFeesForm.get('amount')?.touched">
+                  <small
+                      *ngIf="editFeesForm.get('amount')?.invalid && editFeesForm.get('amount')?.touched"
+                      class="text-danger"> *Fees Amount is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative ">
+                  <label  htmlFor="">Start Date<span class="mandatory">*</span></label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">End Date<span class="mandatory">*</span></label>
+                   <input class="form-control" matInput [matDatepicker]="picker2" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle> 
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

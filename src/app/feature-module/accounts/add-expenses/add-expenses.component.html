@@ -1,0 +1,103 @@
+<div class="content container-fluid">
+				
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Expenses</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/accounts/expenses'">Accounts</a></li>
+          <li class="breadcrumb-item active">Add Expenses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+    
+      <div class="card">
+        <div class="card-body">
+          <form  [formGroup]="addExpensesForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Expense Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Expenses ID <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExpensesForm.get('expensesId')?.invalid && addExpensesForm.get('expensesId')?.touched"
+                  formControlName="expensesId">
+                  <div
+                  *ngIf="addExpensesForm.get('expensesId')?.invalid && addExpensesForm.get('expensesId')?.touched">
+                  <small
+                      *ngIf="addExpensesForm.get('expensesId')?.invalid && addExpensesForm.get('expensesId')?.touched"
+                      class="text-danger"> *Expense Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Item Name <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control"[class.invalid]="addExpensesForm.get('itemName')?.invalid && addExpensesForm.get('itemName')?.touched"
+                  formControlName="itemName">
+                  <div
+                  *ngIf="addExpensesForm.get('itemName')?.invalid && addExpensesForm.get('itemName')?.touched">
+                  <small
+                      *ngIf="addExpensesForm.get('itemName')?.invalid && addExpensesForm.get('itemName')?.touched"
+                      class="text-danger"> *Item Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Item Quality <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExpensesForm.get('itemQuality')?.invalid && addExpensesForm.get('itemQuality')?.touched"
+                  formControlName="itemQuality">
+                  <div
+                  *ngIf="addExpensesForm.get('itemQuality')?.invalid && addExpensesForm.get('itemQuality')?.touched">
+                  <small
+                      *ngIf="addExpensesForm.get('itemQuality')?.invalid && addExpensesForm.get('itemQuality')?.touched"
+                      class="text-danger"> *Item Quality is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Expense Amount <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExpensesForm.get('expenseAmount')?.invalid && addExpensesForm.get('expenseAmount')?.touched"
+                  formControlName="expenseAmount">
+                  <div
+                  *ngIf="addExpensesForm.get('expenseAmount')?.invalid && addExpensesForm.get('expenseAmount')?.touched">
+                  <small
+                      *ngIf="addExpensesForm.get('expenseAmount')?.invalid && addExpensesForm.get('expenseAmount')?.touched"
+                      class="text-danger"> *Expense Amount is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label  htmlFor="">Source of Purchase <span class="login-danger">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addExpensesForm.get('purchaseSource')?.invalid && addExpensesForm.get('purchaseSource')?.touched"
+                  formControlName="purchaseSource">
+                  <div
+                  *ngIf="addExpensesForm.get('purchaseSource')?.invalid && addExpensesForm.get('purchaseSource')?.touched">
+                  <small
+                      *ngIf="addExpensesForm.get('purchaseSource')?.invalid && addExpensesForm.get('purchaseSource')?.touched"
+                      class="text-danger"> *Source of Purchase is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="student-submit">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>							
+    </div>					
+  </div>					
+</div>		

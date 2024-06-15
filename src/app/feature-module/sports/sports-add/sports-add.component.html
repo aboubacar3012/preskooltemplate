@@ -1,0 +1,83 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Sports</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/sports/sports-main'">Sports</a></li>
+          <li class="breadcrumb-item active">Add Sports</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addSports()" [formGroup]="addSportsForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Sports Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Sports ID<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addSportsForm.get('sportsId')?.invalid && addSportsForm.get('sportsId')?.touched"
+                  formControlName="sportsId">
+                  <div
+                  *ngIf="addSportsForm.get('sportsId')?.invalid && addSportsForm.get('sportsId')?.touched">
+                  <small
+                      *ngIf="addSportsForm.get('sportsId')?.invalid && addSportsForm.get('sportsId')?.touched"
+                      class="text-danger"> *Sports Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Sports Name<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addSportsForm.get('sportsName')?.invalid && addSportsForm.get('sportsName')?.touched"
+                  formControlName="sportsName">
+                  <div
+                  *ngIf="addSportsForm.get('sportsName')?.invalid && addSportsForm.get('sportsName')?.touched">
+                  <small
+                      *ngIf="addSportsForm.get('sportsName')?.invalid && addSportsForm.get('sportsName')?.touched"
+                      class="text-danger"> *Sports Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Coach Name<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [class.invalid]="addSportsForm.get('coachName')?.invalid && addSportsForm.get('coachName')?.touched"
+                  formControlName="coachName">
+                  <div
+                  *ngIf="addSportsForm.get('coachName')?.invalid && addSportsForm.get('coachName')?.touched">
+                  <small
+                      *ngIf="addSportsForm.get('coachName')?.invalid && addSportsForm.get('coachName')?.touched"
+                      class="text-danger"> *Coach Name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">Started Year<span class="mandatory">*</span></label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

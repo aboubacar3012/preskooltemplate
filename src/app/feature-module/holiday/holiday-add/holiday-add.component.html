@@ -1,0 +1,97 @@
+<div class="content container-fluid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-title">Add Holiday</h3>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="'/holiday/holiday-main'">Holiday</a></li>
+          <li class="breadcrumb-item active">Add Holiday</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Header -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="addHoliday()" [formGroup]="addHolidayForm">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="form-title"><span>Holiday Information</span></h5>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Holiday Id</label>
+                  <input type="text" class="form-control" [class.invalid]="addHolidayForm.get('holidayId')?.invalid && addHolidayForm.get('holidayId')?.touched"
+                  formControlName="holidayId">
+                  <div
+                  *ngIf="addHolidayForm.get('holidayId')?.invalid && addHolidayForm.get('holidayId')?.touched">
+                  <small
+                      *ngIf="addHolidayForm.get('holidayId')?.invalid && addHolidayForm.get('holidayId')?.touched"
+                      class="text-danger"> *Holiday Id is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Holiday Name</label>
+                  <input type="text" class="form-control" [class.invalid]="addHolidayForm.get('holidayName')?.invalid && addHolidayForm.get('holidayName')?.touched"
+                  formControlName="holidayName">
+                  <div
+                  *ngIf="addHolidayForm.get('holidayName')?.invalid && addHolidayForm.get('holidayName')?.touched">
+                  <small
+                      *ngIf="addHolidayForm.get('holidayName')?.invalid && addHolidayForm.get('holidayName')?.touched"
+                      class="text-danger"> *Holiday name is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label  htmlFor="">Type of Holiday</label>
+                  <select class="form-control" id="exampleFormControlSelect1" [class.invalid]="addHolidayForm.get('holidayType')?.invalid && addHolidayForm.get('holidayType')?.touched"
+                  formControlName="holidayType">
+                    <option value = "">Select Holiday</option>
+                    <option value = "Public Holiday">Public Holiday</option>
+                    <option value = "College Holiday">College Holiday</option>
+                    <option value = "Exam Holiday">Exam Holiday</option>
+                    <option value = "Others">Others</option>
+                    </select>
+                    <div
+                  *ngIf="addHolidayForm.get('holidayType')?.invalid && addHolidayForm.get('holidayType')?.touched">
+                  <small
+                      *ngIf="addHolidayForm.get('holidayType')?.invalid && addHolidayForm.get('holidayType')?.touched"
+                      class="text-danger"> *Holiday type is required</small>
+              </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">Start Date</label>
+                  <input class="form-control" matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="form-group position-relative">
+                  <label  htmlFor="">End Date</label>
+                  <input class="form-control" matInput [matDatepicker]="picker2" placeholder="DD-MM-YYYY">
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
